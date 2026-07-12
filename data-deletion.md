@@ -4,7 +4,7 @@ title: Data Deletion
 permalink: /data-deletion/
 ---
 
-Data Deletion
+# Data Deletion
 Last updated: 2026-07-12
 
 This page explains how server owners and users can request deletion of data related to Lurea, what happens automatically when the bot is removed from a server, and the limits of in-bot privacy controls.
@@ -13,7 +13,7 @@ Contact for deletion requests: didemsahin2468@gmail.com or Discord Support Serve
 
 There is no fully automated self-service command that deletes all of a user’s historical database records. Manual deletion requests are handled via the contact method above.
 
-How server owners can request guild/server data deletion
+## How server owners can request guild/server data deletion
 If Lurea is still installed in your server, you can remove the bot from your Discord server. This triggers automatic deletion of most operational data (see below).
 
 If you need additional deletion — for example, guild registry records, birthday data, ticket ratings, invite tracking data, reaction role panel data, or data after the bot was already removed — contact us at didemsahin2468@gmail.com or via the Discord Support Server: https://discord.gg/E9txAGt49U with:
@@ -24,14 +24,14 @@ Your Discord username and confirmation that you are the server owner or an autho
 A clear description of what you want deleted
 We will review and process requests manually. The target processing time is within 30 days. Complex cases may require identity verification.
 
-How users can request deletion of user-related data
-In-server opt-out (partial — stops new tracking only)
+## How users can request deletion of user-related data
+### In-server opt-out (partial — stops new tracking only)
 Use /privacy optout in a server where Lurea is installed. This will:
 
 Stop new message XP accumulation and new voice tracking writes for you in that server (including voice_seconds, voice_xp, weekly_voice_seconds, revive voice participant writes, and server_activity_hourly voice columns)
 Block secondary XP write paths for opted-out users (such as XP poll votes and daily or speed-challenge XP triggered by commands)
 Clear buffered in-memory tracking data for you immediately (including privacy-filtered revive message buffer flushes)
-What /privacy optout does not automatically delete:
+### What /privacy optout does not automatically delete:
 
 Existing rows in player_stats (points, XP, wins/losses, voice stats, etc.)
 Existing rows in server_activity_hourly (hourly message/voice activity rollups)
@@ -41,7 +41,7 @@ Public display filtering: opted-out users are excluded from public leaderboard a
 
 Opt-out does not delete existing historical database records listed above. Historical activity data is retained by design and may still appear when you view your own stats (for example via /stats). Opt-out does not affect voluntary or social features that are separate from message/voice activity tracking unless specifically stated otherwise — for example, giveaway entries, birthday entries, cross-server event interest registrations, clip or video submission metadata, and ticket activity. Full user-data deletion requires a manual support request via the contact method above. Lurea does not currently provide a self-service command that erases all stored user history.
 
-Full user-data deletion request
+### Full user-data deletion request
 Contact us at didemsahin2468@gmail.com or via the Discord Support Server: https://discord.gg/E9txAGt49U with:
 
 Your Discord user ID (enable Developer Mode in Discord → right-click your profile → Copy User ID)
@@ -49,7 +49,7 @@ The server (guild) ID(s) involved, if applicable
 What you want deleted (for example, stats, ticket ratings, birthday entry, giveaway participation)
 We will review and process requests manually. The target processing time is within 30 days. Complex cases may require identity verification.
 
-What information to include in a deletion request
+## What information to include in a deletion request
 Please include as much of the following as applies:
 
 Request type	Information needed
@@ -58,7 +58,7 @@ User deletion	User ID, relevant guild ID(s), features involved
 Both	Both sets above
 Adding the date of your request and any reference (ticket number, prior conversation) helps us respond faster.
 
-What is deleted automatically when the bot leaves a server
+## What is deleted automatically when the bot leaves a server
 When Lurea is removed from a Discord server, the bot attempts to delete operational data for that guild, including (non-exhaustive):
 
 player_stats, XP, and server_activity_hourly rollups
@@ -77,7 +77,7 @@ revive_clip_submissions (clip/media and conversation-starter submission records 
 In-memory caches for that server (recent message, voice, and reaction event buffers)
 Most guild configuration and operational records supported by automatic cleanup are removed when the bot leaves. Some feature data may remain until manual deletion where automatic cleanup is not technically implemented. Categories listed under What remains in the database after bot removal below are not covered by that automatic cleanup and require a manual deletion request.
 
-Admin-configured content, URLs, and message references (Lurea-controlled)
+## Admin-configured content, URLs, and message references (Lurea-controlled)
 When guild-removal cleanup or an approved manual deletion request removes Lurea-held records for a server, the following Lurea-controlled data may be deleted, as applicable:
 
 Custom background URLs (welcome cards, birthday cards)
@@ -93,14 +93,14 @@ Custom background URLs: removed from Lurea-controlled records when the relevant 
 
 Legacy clip rows: older revive_clip_submissions rows may still contain attachment_url values or original attachment_filename values from before the privacy refactor. These are removed when the guild’s submission rows are deleted through server removal, parent event deletion, or manual cleanup. Lurea does not guarantee removal of the referenced file from Discord CDN.
 
-Clip/media submission records (revive_clip_submissions)
+## Clip/media submission records (revive_clip_submissions)
 When an event ends: submission rows are not deleted. They remain in the database after the event completes.
 When the bot is removed from a server: rows for that guild are deleted through guild-removal cleanup (see above).
 Parent event deletion: rows may also be deleted if the parent revive_events row is removed (database cascade).
 Time-based deletion: there is no automatic time-to-live for these rows.
 Conversation-starter resubmission: if the same user submits again during the same conversation-starter event, the prior row for that user is deleted and replaced — this applies only within that event, not after the event ends.
 Legacy rows: rows created before the privacy refactor may still contain Discord CDN URLs (attachment_url) or original filenames (attachment_filename). No automated process has been run to null or delete these values separately; they are subject to the same guild-removal and parent-event deletion behavior as other submission rows. Deleting Lurea-held legacy URL/filename metadata does not delete the underlying Discord-hosted media file.
-What remains in the database after bot removal
+## What remains in the database after bot removal
 The following are not fully deleted by automatic guild-removal cleanup. Server administrators may request manual deletion through didemsahin2468@gmail.com or the Discord Support Server: https://discord.gg/E9txAGt49U
 
 Data	What is kept
@@ -123,10 +123,10 @@ Ticket transcripts: Lurea does not store ticket message content in its database.
 
 If you need any of the above removed, submit a manual deletion request to didemsahin2468@gmail.com or via the Discord Support Server: https://discord.gg/E9txAGt49U
 
-Automatic retention while the bot is installed
+## Automatic retention while the bot is installed
 server_activity_hourly: rows older than approximately 30 days are deleted automatically
 Other tables (including revive_clip_submissions): no automated time-to-live deletion while the bot is installed; data is retained until guild removal cleanup or a manual deletion request. Clip/media submission rows are not deleted when an event ends
-Limitations / backups / logs
+## Limitations / backups / logs
 Database storage and backups: Lurea uses infrastructure providers located in Germany or the European Union where available. Database availability, redundancy, and backup behavior may depend on the infrastructure provider and plan in use. Lurea does not use backups for advertising, profiling, or unrelated purposes. Deletion requests apply to Lurea-controlled application data and do not cover provider-side backup behavior beyond Lurea’s control.
 Server logs: Application logs are used for operational security, troubleshooting, and abuse prevention. Log retention depends on host configuration and may vary. Logs are accessible only to the operator. Some technical logs may persist temporarily after a deletion request depending on host log retention.
 Discord-side data: Messages, channels, ticket channel content (including form answers), feedback embeds in the internal feedback channel, giveaway posts and giveaway feedback messages, welcome posts, rules/verification posts, cross-server event posts, and clip/media submission files already posted in Discord event channels are controlled by Discord and your server — Lurea cannot delete those on your behalf. Deleting Lurea-held configuration, metadata, or message_id references does not automatically delete the Discord content those records pointed to.
@@ -136,10 +136,10 @@ Feedback: /feedback submissions are sent as Discord embeds to an internal operat
 Giveaway feedback text: feedback message content submitted through giveaway feedback flows is posted to a configured Discord channel and is not stored in the Lurea database (only an optional source_message_id may be stored if staff later approve a bonus)
 Legal and safety retention: We may retain minimal records where reasonably needed for abuse prevention, dispute resolution, or legal obligations
 Processing time: Deletion requests are handled manually. The target processing time is within 30 days. Complex cases may require identity verification. Lurea does not promise instant deletion
-Contact
+## Contact
 didemsahin2468@gmail.com or Discord Support Server: https://discord.gg/E9txAGt49U
 
-Related documents:
+### Related documents:
 
 Privacy Policy
 Terms of Service

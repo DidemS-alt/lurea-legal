@@ -5,7 +5,16 @@
   --muted: #555555;
   --border: #dddddd;
   --link: #0969da;
-  --max-width: 48rem;
+  --code-bg: #f4f4f5;
+  --blockquote-bg: #f8f8f8;
+  --max-width: 42rem;
+  --line-height: 1.65;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +24,8 @@
     --muted: #aaaaaa;
     --border: #333333;
     --link: #58a6ff;
+    --code-bg: #1c1c1e;
+    --blockquote-bg: #1a1a1a;
   }
 }
 
@@ -27,14 +38,17 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: var(--line-height);
   color: var(--text);
   background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 header {
   border-bottom: 1px solid var(--border);
-  padding: 1rem;
+  padding: var(--space-md);
 }
 
 nav {
@@ -59,20 +73,126 @@ nav a:focus {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1rem 3rem;
+  padding: var(--space-xl) var(--space-md) 3rem;
+  overflow-wrap: break-word;
 }
+
+/* --- Heading hierarchy --- */
 
 main h1 {
-  margin-top: 0;
-  line-height: 1.25;
+  margin: 0 0 var(--space-lg);
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
+main h2 {
+  margin: var(--space-2xl) 0 var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border);
+  font-size: clamp(1.375rem, 3vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+main h3 {
+  margin: var(--space-xl) 0 var(--space-sm);
+  font-size: clamp(1.125rem, 2.5vw, 1.3125rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+main h4 {
+  margin: var(--space-lg) 0 var(--space-xs);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* Legal pages: first paragraph is the document title (no leading h1). */
+main > p:first-child {
+  margin: 0 0 var(--space-xs);
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* "Last updated" / metadata line on legal pages. */
+main > p:first-child + p {
+  margin: 0 0 var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* --- Body text --- */
+
 main p {
-  margin: 0 0 1rem;
+  margin: 0 0 var(--space-md);
+}
+
+main p:last-child {
+  margin-bottom: 0;
+}
+
+main strong {
+  font-weight: 600;
+}
+
+/* --- Lists --- */
+
+main ul,
+main ol {
+  margin: 0 0 var(--space-md);
+  padding-left: 1.625rem;
 }
 
 main ul {
-  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+main ol {
+  list-style-type: decimal;
+}
+
+main li {
+  margin: 0 0 var(--space-xs);
+  line-height: var(--line-height);
+  padding-left: 0.25rem;
+}
+
+main li:last-child {
+  margin-bottom: 0;
+}
+
+main li > ul,
+main li > ol {
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}
+
+main ul ul {
+  list-style-type: circle;
+}
+
+/* --- Links --- */
+
+main a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+main a:hover,
+main a:focus {
+  text-decoration-thickness: 2px;
 }
 
 a {
@@ -84,9 +204,121 @@ a:focus {
   text-decoration-thickness: 2px;
 }
 
+/* --- Blockquotes --- */
+
+main blockquote {
+  margin: var(--space-md) 0;
+  padding: var(--space-sm) var(--space-md);
+  border-left: 4px solid var(--border);
+  background: var(--blockquote-bg);
+  color: var(--text);
+}
+
+main blockquote p {
+  margin: 0 0 var(--space-sm);
+}
+
+main blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Tables --- */
+
+main table {
+  width: 100%;
+  margin: var(--space-md) 0 var(--space-lg);
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+main thead {
+  border-bottom: 2px solid var(--border);
+}
+
+main th,
+main td {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+main th {
+  font-weight: 600;
+}
+
+main tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Tab-separated rows rendered as paragraphs (legal source format). */
+main p:has(+ p) {
+  tab-size: 1.5rem;
+}
+
+main > p:first-child ~ p {
+  white-space: pre-wrap;
+}
+
+/* --- Code --- */
+
+main code {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.15em 0.35em;
+  border-radius: 0.25rem;
+  background: var(--code-bg);
+  word-break: break-word;
+}
+
+main pre {
+  margin: var(--space-md) 0;
+  padding: var(--space-md);
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  background: var(--code-bg);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  -webkit-overflow-scrolling: touch;
+}
+
+main pre code {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: inherit;
+  word-break: normal;
+}
+
+/* --- Horizontal rules --- */
+
+main hr {
+  margin: var(--space-xl) 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-xs);
+  }
+
+  main {
+    padding: var(--space-lg) var(--space-md) 2.5rem;
+  }
+
+  main table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  main th,
+  main td {
+    padding: 0.5rem 0.625rem;
   }
 }
