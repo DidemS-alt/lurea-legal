@@ -1,3 +1,9 @@
+---
+layout: default
+title: Impressum
+permalink: /impressum/
+---
+
 Impressum
 Zuletzt aktualisiert: 2026-07-12
 

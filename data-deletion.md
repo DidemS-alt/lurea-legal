@@ -1,3 +1,9 @@
+---
+layout: default
+title: Data Deletion
+permalink: /data-deletion/
+---
+
 Data Deletion
 Last updated: 2026-07-12
 
