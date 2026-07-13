@@ -154,15 +154,25 @@ Lurea cannot delete, modify, or control Discord-hosted content on your behalf. R
 If you want Discord-side content removed, you or your server administrators must use Discord’s tools, your server’s moderation practices, or applicable Discord or third-party processes.
 
 ## Limitation of liability
+Lurea is provided free of charge and on an “as is” and “as available” basis (see **Availability / no uptime guarantee**). We do not guarantee uninterrupted uptime, availability, data preservation, or error-free operation. This does not override mandatory liability under applicable law.
+
 To the fullest extent permitted by applicable law:
 
-Lurea and its operator are not liable for indirect, incidental, special, consequential, or punitive damages
-Lurea is not liable for loss of data, profits, goodwill, or community activity resulting from use or inability to use the service
-Lurea is not responsible for decisions made by server owners or administrators based on Lurea insights, or for community outcomes resulting from use of Lurea features
-Total liability for any claim related to Lurea is limited to EUR 0 for the current free use of the service. This limitation does not apply to liability for damages caused by willful misconduct, gross negligence, or injury to life, body, or health, which cannot be limited under applicable law.
+**Unlimited liability.** Lurea and its operator remain fully liable without limitation for damages caused by intent (willful misconduct), gross negligence, injury to life, body, or health, and for any other liability that cannot legally be excluded or limited under applicable law.
+
+**Ordinary negligence — essential contractual obligations.** Where Lurea is liable for breach of essential contractual obligations (cardinal duties) due to ordinary negligence, liability is limited to the foreseeable damage typical for this type of free service.
+
+**Otherwise.** Liability for ordinary negligence for non-essential obligations may be excluded to the extent legally permitted.
+
+Lurea and its operator are not liable, to the extent permitted by applicable law, for indirect, incidental, special, consequential, or punitive damages.
+
+Lurea is not liable, to the extent permitted by applicable law, for loss of data, profits, goodwill, or community activity resulting from use or inability to use the service.
+
+Lurea is not responsible for decisions made by server owners or administrators based on Lurea insights, or for community outcomes resulting from use of Lurea features.
+
 Some jurisdictions do not allow certain limitations; in those cases, limitations apply only to the extent allowed by law.
 
-Nothing in these Terms excludes liability that cannot be excluded under applicable law.
+Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law.
 
 ## Termination
 Server owners may remove Lurea from a server at any time.
@@ -174,7 +184,14 @@ Removing the bot triggers automatic deletion of most operational server data as 
 ## Changes to these Terms
 We may update these Terms from time to time. The “Last updated” date at the top will change when we do.
 
-Continued use of Lurea after changes means you accept the updated Terms.
+Material changes will be announced through a reasonable available communication channel before they take effect, where reasonably practicable. The notice will state the planned effective date. If you do not agree with updated Terms, you may stop using Lurea and remove the bot from your server before the effective date.
+
+Continued use of Lurea after the effective date may be treated as use under the updated Terms only to the extent legally permitted.
+
+For urgent changes — including legal, security, abuse-prevention, or platform-required changes (for example, changes required by Discord) — shorter or immediate notice may apply where reasonably necessary.
+
+## Governing law
+These Terms are governed by German law, excluding the UN Convention on Contracts for the International Sale of Goods. If you are a consumer, this choice of law does not deprive you of mandatory consumer protections that apply under the law of your habitual residence.
 
 ## Contact
 Questions about these Terms:

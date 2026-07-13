@@ -14,6 +14,8 @@ Lurea helps Discord server owners understand community activity, run engagement 
 
 Contact: didemsahin2468@gmail.com or Discord Support Server: https://discord.gg/E9txAGt49U
 
+For the controller's full contact details, including postal address, please refer to the [Impressum]({{ "/impressum/" | relative_url }}).
+
 ## What data Lurea collects
 Lurea collects and stores data needed to operate its features. This generally includes:
 
@@ -77,6 +79,25 @@ Send operational messages (for example, welcome posts or ticket notifications)
 Improve reliability, debugging, and abuse prevention
 Respond to feedback and support requests
 Operate internal bot administration, support, and reliability monitoring
+
+## Legal bases for processing (GDPR Article 6)
+Under the GDPR, Lurea must have a valid legal basis for each category of personal data processing. The legal basis depends on the processing activity and your relationship to Lurea (for example, as a server owner or administrator who installs and configures the bot, or as a server member who interacts with Lurea features). The following describes the bases Lurea relies on for the processing described in this Privacy Policy.
+
+**Performance of a contract or steps at your request (Article 6(1)(b) GDPR).** Lurea processes personal data where necessary to provide, operate, and maintain the bot features you or your server administrators enable — including XP, leaderboards, tickets, welcome cards, reaction roles, invite tracking, giveaways, rules verification, birthday cards, server setup, cross-server events, clip and media events, Auto Rescue, Vote Pass (where enabled), and related configuration and metadata. This includes processing needed to deliver features you or your administrators configure, and processing related to voluntary feature use that you initiate (for example, submitting a birthday date, registering interest in a cross-server event, entering a giveaway, or submitting a clip or media event entry).
+
+**Legitimate interests (Article 6(1)(f) GDPR).** Lurea processes personal data where necessary for the following legitimate interests, provided those interests are not overridden by your rights and interests:
+- operating, securing, and maintaining Lurea and its infrastructure;
+- improving reliability, debugging, and abuse prevention;
+- providing community analytics and activity-based insights to server owners and administrators as described in this policy;
+- maintaining the internal guild registry and supporting administration, support, and operational monitoring;
+- responding to feedback and support requests.
+
+Where activity tracking and related analytics for XP, voice activity, leaderboards, and server health insights are based on legitimate interests, you may object to that processing as described in **Your rights under the GDPR** below. Lurea also provides per-server tracking opt-out via `/privacy optout` as described under **Data deletion and access requests**.
+
+**Compliance with legal obligations (Article 6(1)(c) GDPR).** Lurea may process and retain personal data where necessary to comply with applicable legal obligations (for example, where retention is required by law).
+
+**Consent (Article 6(1)(a) GDPR).** Lurea does not rely on consent as the primary legal basis for core bot operation or for message and voice activity tracking (which are operated with opt-out controls as described in this policy). [TO VERIFY] whether consent is relied upon as the legal basis for any specific optional processing activity not covered by the bases above.
+
 ## Vote Pass
 Vote Pass is an optional feature based on active Top.gg votes from eligible server staff (such as the server owner, administrators, or members with Manage Server permission).
 
@@ -197,6 +218,19 @@ Data may be processed in these locations as necessary to operate Lurea. Their ow
 
 Lurea uses infrastructure providers located in Germany or the European Union where available. Database availability, redundancy, and backup behavior may depend on the infrastructure provider and plan in use. Lurea does not use backups for advertising, profiling, or unrelated purposes.
 
+## International data transfers
+Some third-party services Lurea relies on may process personal data outside the European Economic Area (EEA), including in the United States or other countries that may not be subject to an EU adequacy decision.
+
+**Discord.** Discord provides the platform, API, and content delivery services Lurea uses. Discord-related personal data (such as user IDs, guild IDs, channel IDs, message IDs, and content posted to Discord channels) may be processed on Discord’s infrastructure in locations determined by Discord. Lurea does not control Discord’s processing locations or transfer mechanisms. [TO VERIFY] the transfer safeguards Discord relies on for personal data transferred outside the EEA (for example, under Discord’s terms and privacy documentation).
+
+**Top.gg.** Where Top.gg vote webhooks and bot statistics are used, Top.gg may process Discord user IDs, vote timestamps, and related metadata on Top.gg’s infrastructure. Lurea does not control Top.gg’s processing locations or transfer mechanisms. [TO VERIFY] the transfer safeguards Top.gg relies on for personal data transferred outside the EEA.
+
+**Supabase PostgreSQL and Contabo VPS.** As described under **Third-party services**, Lurea uses database hosting in an EU region where configured and application hosting in Germany. Lurea aims to keep Lurea-controlled primary database and application hosting within the EEA where available.
+
+**Admin-configured external URLs.** Server administrators may configure URLs pointing to external hosts (for example, custom background or panel image URLs). Lurea stores these URL strings and may temporarily fetch linked resources at render time. Lurea does not control where those external hosts process or store data. [TO VERIFY] whether any frequently used external URL hosts process data outside the EEA and what safeguards apply.
+
+When personal data is transferred to countries outside the EEA and no adequacy decision applies, appropriate safeguards must be in place under GDPR Chapter V. Lurea has not independently verified all transfer safeguards for every third-party service listed above. Where safeguards cannot be verified from official documentation available to Lurea, this is marked [TO VERIFY] rather than stated as confirmed.
+
 ## Data retention
 Retention practices may change as Lurea develops. At a high level:
 
@@ -209,6 +243,9 @@ Top.gg vote records are stored per user globally and are not automatically delet
 Feedback sent via /feedback remains in the operator’s internal Discord feedback channel until manually removed there — feedback message content is not stored in the Lurea database; a guild-level flag that feedback was submitted may be stored
 Infrastructure and backups: see Third-party services above
 Server logs: used for operational security, troubleshooting, and abuse prevention; log retention depends on host configuration and may vary (see Data minimization and security below)
+
+**Storage limitation.** Lurea applies storage limitation by keeping personal data only for as long as needed for the purposes described in this Privacy Policy, subject to the retention rules above. Where tables do not have an automated time-to-live while the bot remains installed, data is retained because it supports ongoing feature operation (for example, cumulative XP and stats, ticket records, or submission metadata) until guild-removal cleanup, parent-record deletion, a manual deletion request, or another deletion path described in this policy and in Data Deletion applies. This reflects Lurea’s current operational design and is not indefinite storage without purpose; deletion criteria and exceptions are described in **Guild removal and data retention**, **Data deletion and access requests**, and Data Deletion.
+
 ## Data deletion and access requests
 You can request access to, correction of, or deletion of data related to you or your server.
 
@@ -228,6 +265,32 @@ Contact for privacy requests: didemsahin2468@gmail.com or Discord Support Server
 We handle deletion requests manually. The target processing time is within 30 days. Complex cases may require identity verification. Some minimal technical logs may persist temporarily after a deletion request depending on host log retention (see Data retention above). Some data may also be retained where needed for security, abuse prevention, or legal obligations.
 
 Deletion of Lurea-held records (including configuration text, stored URLs, and message_id references) does not by itself delete the underlying Discord messages, attachments, or third-party-hosted files those references point to. See Deletion boundaries (Lurea vs Discord and third parties) above and Data Deletion.
+
+## Your rights under the GDPR
+If you are in the European Economic Area (EEA) or UK, or otherwise protected by the GDPR, you may have the following rights regarding your personal data. **These rights are not absolute and may not apply in every situation** — for example, where an exception applies, where Lurea cannot verify your identity, where data is needed to comply with legal obligations, or where deletion would conflict with ongoing legitimate processing that Lurea is permitted to continue.
+
+**Right of access (Article 15 GDPR).** You may request confirmation of whether Lurea processes personal data about you and, where applicable, access to that data and related information about the processing.
+
+**Right to rectification (Article 16 GDPR).** You may request correction of inaccurate personal data Lurea holds about you. Some data originates from Discord (for example, user IDs) and can only be updated through Discord or by deleting and re-creating records where applicable.
+
+**Right to erasure (Article 17 GDPR).** You may request deletion of personal data Lurea holds about you where the conditions for erasure under the GDPR are met. See **Data deletion and access requests** and Data Deletion for what Lurea can delete automatically, via `/privacy optout`, or through manual requests, and for limitations (including Discord-hosted content Lurea cannot delete).
+
+**Right to restriction of processing (Article 18 GDPR).** You may request that Lurea restrict processing of your personal data in the situations set out in Article 18 GDPR (for example, while accuracy is contested or where processing is unlawful but you prefer restriction over erasure).
+
+**Right to data portability (Article 20 GDPR).** Where processing is based on consent or on a contract and is carried out by automated means, you may have the right to receive personal data you provided to Lurea in a structured, commonly used, machine-readable format, and to transmit it to another controller where technically feasible. **This right applies only where those conditions are met**; much of the data Lurea processes consists of Discord identifiers and activity metadata derived from bot operation rather than data you directly supplied in a portable form. [TO VERIFY] the scope of portable data Lurea can provide in practice for specific request types.
+
+**Right to object (Article 21 GDPR).** Where Lurea processes your personal data based on legitimate interests (see **Legal bases for processing (GDPR Article 6)**), you may object to that processing on grounds relating to your particular situation. Lurea will stop processing unless it demonstrates compelling legitimate grounds that override your interests, rights, and freedoms, or processing is needed for legal claims. For activity tracking in a server where Lurea is installed, you may also use `/privacy optout` as described under **Data deletion and access requests**; that opt-out stops new message XP and new voice tracking and applies public display filtering as described there, but does not by itself erase historical records.
+
+**Right to withdraw consent (Article 7(3) GDPR).** Where Lurea relies on your **consent** as the legal basis for a specific processing activity, you may withdraw that consent at any time. Withdrawal does not affect the lawfulness of processing before withdrawal. Lurea does not rely on consent as the primary legal basis for core bot operation or message/voice activity tracking; see **Legal bases for processing (GDPR Article 6)**. [TO VERIFY] whether any specific optional feature relies on consent and how withdrawal should be exercised for that feature.
+
+**How to exercise your rights.** To exercise applicable rights, contact us using the details under **Contact** and **Data deletion and access requests**. We handle requests manually. The target processing time is within 30 days. Complex cases may require identity verification (for example, confirmation of your Discord user ID and, where relevant, server ownership or administrator status).
+
+## Right to lodge a complaint with a supervisory authority
+You have the right to lodge a complaint with a data protection supervisory authority if you believe that the processing of your personal data infringes applicable data protection law — in particular, in the EU Member State of your habitual residence, place of work, or place of the alleged infringement.
+
+Under Article 77 GDPR, you may lodge a complaint with any competent data protection supervisory authority.
+
+We encourage you to contact us first using the details in **Contact** so we can try to resolve your concern.
 
 ## Data minimization and security
 Lurea is designed to collect only data needed for its features and to avoid storing unnecessary personal data.

@@ -22,7 +22,7 @@ Your server (guild) ID
 Your server name
 Your Discord username and confirmation that you are the server owner or an authorized administrator
 A clear description of what you want deleted
-We will review and process requests manually. The target processing time is within 30 days. Complex cases may require identity verification.
+We will review and process requests manually without undue delay. Under GDPR Article 12(3), we normally respond within one month of receiving your request. For complex or multiple requests, this period may be extended by up to two additional months where legally permitted; if an extension is necessary, we will inform you within the initial one-month period and explain the reasons. We may request identity or scope clarification where reasonably needed.
 
 ## How users can request deletion of user-related data
 ### In-server opt-out (partial — stops new tracking only)
@@ -47,7 +47,7 @@ Contact us at didemsahin2468@gmail.com or via the Discord Support Server: https:
 Your Discord user ID (enable Developer Mode in Discord → right-click your profile → Copy User ID)
 The server (guild) ID(s) involved, if applicable
 What you want deleted (for example, stats, ticket ratings, birthday entry, giveaway participation)
-We will review and process requests manually. The target processing time is within 30 days. Complex cases may require identity verification.
+We will review and process requests manually without undue delay. Under GDPR Article 12(3), we normally respond within one month of receiving your request. For complex or multiple requests, this period may be extended by up to two additional months where legally permitted; if an extension is necessary, we will inform you within the initial one-month period and explain the reasons. We may request identity or scope clarification where reasonably needed.
 
 ## What information to include in a deletion request
 Please include as much of the following as applies:
@@ -127,7 +127,9 @@ If you need any of the above removed, submit a manual deletion request to didems
 server_activity_hourly: rows older than approximately 30 days are deleted automatically
 Other tables (including revive_clip_submissions): no automated time-to-live deletion while the bot is installed; data is retained until guild removal cleanup or a manual deletion request. Clip/media submission rows are not deleted when an event ends
 ## Limitations / backups / logs
-Database storage and backups: Lurea uses infrastructure providers located in Germany or the European Union where available. Database availability, redundancy, and backup behavior may depend on the infrastructure provider and plan in use. Lurea does not use backups for advertising, profiling, or unrelated purposes. Deletion requests apply to Lurea-controlled application data and do not cover provider-side backup behavior beyond Lurea’s control.
+Database storage and backups: Lurea uses infrastructure providers located in Germany or the European Union where available (including Supabase for database hosting and Contabo for application hosting). Database availability, redundancy, and backup or recovery copy behavior may depend on the infrastructure provider and service plan in use; not every plan includes scheduled automatic backups. Lurea does not use backups for advertising, profiling, or unrelated purposes.
+
+Deletion requests apply first to active Lurea-controlled systems. Personal data may temporarily remain in infrastructure backups, recovery copies, or provider-managed backup systems where such copies exist. Those copies are removed or overwritten according to the normal backup lifecycle and retention policies of the relevant infrastructure provider. The exact retention duration may vary by provider and service plan. Backup copies are not restored into active production systems solely to process a deletion request. If a backup is restored for disaster recovery, deletion requests that are still applicable should be re-applied to the restored active data where technically and legally required.
 Server logs: Application logs are used for operational security, troubleshooting, and abuse prevention. Log retention depends on host configuration and may vary. Logs are accessible only to the operator. Some technical logs may persist temporarily after a deletion request depending on host log retention.
 Discord-side data: Messages, channels, ticket channel content (including form answers), feedback embeds in the internal feedback channel, giveaway posts and giveaway feedback messages, welcome posts, rules/verification posts, cross-server event posts, and clip/media submission files already posted in Discord event channels are controlled by Discord and your server — Lurea cannot delete those on your behalf. Deleting Lurea-held configuration, metadata, or message_id references does not automatically delete the Discord content those records pointed to.
 Third-party URL hosts: Custom background URLs and panel/embed image URLs point to external hosts. Lurea can delete the stored URL string from its database, but does not control or guarantee deletion of files at those external URLs.
@@ -135,7 +137,7 @@ Third-party systems: Lurea cannot guarantee deletion of data held by third-party
 Feedback: /feedback submissions are sent as Discord embeds to an internal operator channel; feedback message content is not stored in the Lurea database. Lurea may store a guild-level flag that feedback was submitted. Deletion of feedback content must be handled in Discord
 Giveaway feedback text: feedback message content submitted through giveaway feedback flows is posted to a configured Discord channel and is not stored in the Lurea database (only an optional source_message_id may be stored if staff later approve a bonus)
 Legal and safety retention: We may retain minimal records where reasonably needed for abuse prevention, dispute resolution, or legal obligations
-Processing time: Deletion requests are handled manually. The target processing time is within 30 days. Complex cases may require identity verification. Lurea does not promise instant deletion
+Processing time: Deletion requests are handled manually without undue delay. Under GDPR Article 12(3), we normally respond within one month of receiving your request. For complex or multiple requests, this period may be extended by up to two additional months where legally permitted; if an extension is necessary, we will inform you within the initial one-month period and explain the reasons. We may request identity or scope clarification where reasonably needed. Lurea does not promise instant deletion
 ## Contact
 didemsahin2468@gmail.com or Discord Support Server: https://discord.gg/E9txAGt49U
 
